@@ -1,0 +1,69 @@
+html, body {
+    background-color: azure;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: calc(100% - 20px);
+    background-color:antiquewhite;
+    padding: 10px;
+}
+.site-title {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.site-logo-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dowload-button {
+    background-color: rgb(132, 175, 255);
+    border: none;
+    padding: 8px;
+    font-size: 20px;
+    padding-inline: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: #454545;
+    
+}
+.dowload-button:hover {
+    background-color: rgb(149, 186, 255);
+    scale: 1.1;
+}
+.download-box {
+    margin: 10px;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(172, 198, 255);
+    width: 90%;
+    max-width: 450px;
+    margin: 5px;
+
+}
+.donwload-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.download-title {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #3b3b3b;
+}
