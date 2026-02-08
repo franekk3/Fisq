@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="apple-touch-icon" href="./icons/fishky-logo-notext-no-bg.png">
-    <link rel="icon" type="image/png" href="./icons/fishky-logo-notext-no-bg.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="apple-touch-icon" href="./web/icons/fishky-logo-notext-no-bg.png">
+    <link rel="icon" type="image/png" href="./web/icons/fishky-logo-notext-no-bg.png">
+    <link rel="stylesheet" href="./web/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> FishKy - Home </title>
 </head>
 <body>
     <div class="nav-bar">
         <div class="site-logo-box"> 
-            <img height="55px" width="55px" src="./icons/fishky-logo-notext-no-bg.png">
+            <img height="55px" width="55px" src="./web/icons/fishky-logo-notext-no-bg.png">
             <p class="site-title"> FishKy  </p>
         </div>
         
-        <img height="40px" width="40px" src="./icons/menu-burger.png">
+        <img height="40px" width="40px" src="./web/icons/menu-burger.png">
     </div>
     <div class="download-box">
         <p class="download-title"> What is this? </p>
@@ -33,20 +33,20 @@
     <div class="fishky-slider">
         <p class="download-title"> ScreenShots! </p>
         <div style="display: flex; flex-direction: row; text-align: center; align-items: center; justify-content: center; gap: 10px;">
-            <img src="./icons/angle-left.png" class="nav-icon left" onclick="changeSlide(-1)" alt="Poprzednie">
+            <img src="./web/icons/angle-left.png" class="nav-icon left" onclick="changeSlide(-1)" alt="Poprzednie">
 
             <div class="slide-container">
-                <img id="current-slide" src="./media/screenshot_1.png" alt="Podgląd aplikacji">
+                <img id="current-slide" src="./web/media/screenshot_1.png" alt="Podgląd aplikacji">
             </div>
 
-            <img src="./icons/angle-right.png" class="nav-icon right" onclick="changeSlide(1)" alt="Następne">
+            <img src="./web/icons/angle-right.png" class="nav-icon right" onclick="changeSlide(1)" alt="Następne">
         </div>
     </div>
     <div class="footer">
         <p> FishKy | 2026 </p>
         <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 10px;  margin-top: 10px; width: 100%; justify-content: center; ">
-            <img onclick="window.location.href='https://https://github.com/franekk3/FishKy';" class="btn-on-footer" src="./icons/GitHub_Lockup_White.png">
-            <img class="btn-on-footer" src="./icons/credits-btn.png">
+            <img onclick="window.location.href='https://https://github.com/franekk3/FishKy';" class="btn-on-footer" src="./web/icons/GitHub_Lockup_White.png">
+            <img class="btn-on-footer" src="./web/icons/credits-btn.png">
         </div>
 
     </div>
@@ -56,10 +56,10 @@
     <script>
 // Tablica ze ścieżkami do Twoich zdjęć
 const images = [
-    "./media/screenshot_1.png",
-    "./media/screenshot_2.png",
-    "./media/screenshot_3.png",
-    "./media/screenshot_4.png"
+    "./web/media/screenshot_1.png",
+    "./web/media/screenshot_2.png",
+    "./web/media/screenshot_3.png",
+    "./web/media/screenshot_4.png"
 ];
 
 let currentIndex = 0;
