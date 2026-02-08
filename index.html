@@ -26,6 +26,45 @@
         </div>
 
     </div>
-    
+    <div class="fishky-slider">
+    <img src="./icons/angle-left.png" class="nav-icon left" onclick="changeSlide(-1)" alt="Poprzednie">
+
+    <div class="slide-container">
+        <img id="current-slide" src="./media/screenshot_1.png" alt="Podgląd aplikacji">
+    </div>
+
+    <img src="./icons/angle-right.png" class="nav-icon right" onclick="changeSlide(1)" alt="Następne">
+</div>
+
+    <script>
+// Tablica ze ścieżkami do Twoich zdjęć
+const images = [
+    "./media/screenshot_1.png",
+    "./media/screenshot_2.png",
+    "./media/screenshot_4.png",
+    "./media/screenshot_4.png"
+];
+
+let currentIndex = 0;
+const slideElement = document.getElementById('current-slide');
+
+function changeSlide(direction) {
+    // Rozpocznij animację zanikania
+    slideElement.classList.add('fade-out');
+
+    setTimeout(() => {
+        // Oblicz nowy indeks (z pętlą: po ostatnim wraca do pierwszego)
+        currentIndex += direction;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+
+        // Zmień źródło zdjęcia
+        slideElement.src = images[currentIndex];
+
+        // Zakończ animację (pojawianie się)
+        slideElement.classList.remove('fade-out');
+    }, 400); // 400ms musi zgadzać się z czasem transition w CSS
+}
+</script>
 </body>
 </html>
