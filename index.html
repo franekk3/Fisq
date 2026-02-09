@@ -17,11 +17,12 @@
         
         <img onclick="showMenu()" height="40px" width="40px" src="./web/icons/menu-burger.png">
     </div>
-    <div class="download-box">
+    <div  class="responsive-container">
+    <div  style="height: 160px;" class="download-box">
         <p class="download-title"> What is this? </p>
         <p class="normal-text"> <b> Fisq </b> is a powerful yet simple flashcard app designed for Android. Whether you want to create your own study sets or discover pre-made cards, FishKy makes learning effortless. Combined with a clean, modern UI and fluid animations, it’s built to provide the ultimate study experien</p>
     </div>
-    <div class="download-box">
+    <div style="height: 160px;" class="download-box">
         <p class="download-title"> Downlaod Fisq! </p>
         <p class="normal-text"> This is the only offical way to download "Fisq!" app! </p>
         <div class="download-btns">
@@ -30,7 +31,10 @@
         </div>
 
     </div>
-    <div class="fishky-slider">
+
+    </div>
+
+    <div  class="fishky-slider">
         <p class="download-title"> ScreenShots! </p>
         <div style="display: flex; flex-direction: row; text-align: center; align-items: center; justify-content: center; gap: 10px;">
             <img src="./web/icons/angle-left.png" class="nav-icon left" onclick="changeSlide(-1)" alt="Previous">
@@ -43,14 +47,13 @@
         </div>
     </div>
     <div class="footer">
-        <p> Fisq! | 2026 </p>
-        <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 10px;  margin-top: 10px; width: 100%; justify-content: center; ">
+        <p>  &copy; Fisq! | 2026 </p>
+        <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 10px; margin-top: 10px; width: 100%; justify-content: center;">
             <img onclick="window.location.href='https://github.com/franekk3/Fisq';" class="btn-on-footer" src="./web/icons/GitHub_Lockup_White.png">
             <img onclick="window.location.href='./web/credits.html';" class="btn-on-footer" src="./web/icons/credits-btn.png">
         </div>
-
+        
     </div>
-
 </div>
 <div id="side-menu" class="side-menu hidden">
     <img onclick="hideMenu()" style="height: 25px; width: 25px; position: absolute; right: 10px; top: 10px;" src="./web/icons/cross-small.png">
@@ -74,6 +77,10 @@
     <div onclick="window.location.href='./web/credits.html';" class="side-bar-option">
         <img class="side-bar-icon" src="./web/icons/usd-circle.png">
         <p> Credits </p>
+    </div>
+    <div onclick="window.location.href='./web/privacy.html';" class="side-bar-option">
+        <img class="side-bar-icon" src="./web/icons/user-lock.png">
+        <p> Privacy </p>
     </div>
 </div>
 
