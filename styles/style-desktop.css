@@ -1,0 +1,85 @@
+.timer-display {
+    font-size: 80px !important;
+    font-weight: bold;
+    font-family: 'Google Sans', sans-serif;
+    
+}
+
+.nav-bar {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0px;
+    background-color: #f3edf7;
+    left: 0px;
+    top: 0px;
+    width: 90px;
+    z-index: 9999;
+    text-align: center;
+}
+.nav-bar-element {
+    padding-top: 10px;
+}
+.nav-bar-image{
+    width: 35px;
+    height: 35px;
+}
+.nav-bar-label {
+    font-size: 16px;
+}
+.description-label1 {
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+}
+.time-label1 {
+    font-size: 32px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+.m3-card-small1 {
+    background-color: #dccbe8;
+    padding: 5px;
+    border-radius: 12px;
+    text-align: center;
+    color: #262035;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.description-label2 {
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+}
+.time-label2 {
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+.m3-card-small2 {
+    background-color: #dccbe8;
+    padding: 5px;
+    border-radius: 12px;
+    text-align: center;
+    color: #262035;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+}
+.hidden3 {
+    display: flex;
+}

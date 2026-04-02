@@ -1,0 +1,444 @@
+            body {
+                font-family: 'Google Sans', sans-serif;
+                display: flex;
+                background-color: #fffbfe;
+                height: 100vh;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+
+            }
+            .m3-ButtonSample {
+                gap: 10px;
+                background-color: #d1bcff;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 18px;
+                border: none;
+                color: #371e6f;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+            }
+            .m3-ButtonSample:active {
+                background-color: #c7abe4;
+            }
+            .m3-ButtonWithAnimatedShapeSample {
+                gap: 10px;
+                background-color: #d1bcff;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                border-radius: 18px; 
+                border: none;
+                color: #371e6f;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                scale: 1.1;
+                transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                            background-color 0.2s ease, 
+                            transform 0.1s ease;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /* Stan wciśnięty */
+            .m3-ButtonWithAnimatedShapeSample:active {
+                background-color: #c7abe4;
+                border-radius: 10px; /* Nowy promień */
+                transform: scale(0.98); /* Opcjonalnie: lekki efekt wciśnięcia */
+            }
+
+            /* Pseudo-element ::after (opcjonalnie dla efektu błysku) */
+
+
+            .m3-ButtonWithAnimatedShapeSample:active::after {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .m3-ButtonWithIconSample {
+                gap: 10px;
+                background-color: #d1bcff;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 18px;
+                border: none;
+                color: #371e6f;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+            }
+            .m3-ButtonWithIconSample:active {
+                background-color: #c7abe4;
+            }
+            .m3-ButtonWithIconSample-icon{
+                width: 20px;
+                height: 20px;
+            }
+            .m3-ButtonWithIconWithAnimatedShapeSample {
+                gap: 10px;
+                background-color: #d1bcff;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                border-radius: 18px; 
+                border: none;
+                color: #371e6f;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                scale: 1.1;
+                transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                            background-color 0.2s ease, 
+                            transform 0.1s ease;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /* Stan wciśnięty */
+            .m3-ButtonWithIconWithAnimatedShapeSample:active {
+                background-color: #c7abe4;
+                border-radius: 10px; /* Nowy promień */
+                transform: scale(0.98); /* Opcjonalnie: lekki efekt wciśnięcia */
+            }
+
+            /* Pseudo-element ::after (opcjonalnie dla efektu błysku) */
+
+
+            .m3-ButtonWithIconWithAnimatedShapeSample:active::after {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .m3-ButtonWithIconWithAnimatedShapeSample-icon{
+                width: 20px;
+                height: 20px;
+            }
+/* LIGHT MODE — Material 3 Elevated Button */
+
+.m3-ElevantedButtonSample {
+    gap: 10px;
+    background-color: #e4cafb; /* jasne tło */
+    display: flex;
+    font-family: 'Google Sans', sans-serif;
+    font-size: 17px;
+    text-align: center;
+    flex-direction: row;
+    border-radius: 18px;
+    border: none;
+    color: #6750A4; /* M3 primary */
+    padding: 7px;
+    padding-inline: 20px;
+    font-weight: 450;
+    scale: 1.1;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.25); /* lekki cień jak w Elevated Button */
+}
+
+.m3-ElevantedButtonSample:active {
+    background-color: #E9E5F8; /* jasny fioletowy odcień */
+}
+
+
+/* LIGHT MODE — Animated Shape Button */
+
+.m3-ElevantedButtonWithAnimatedShapeSample {
+    gap: 10px;
+    background-color: #eedcfd;
+    display: flex;
+    font-family: 'Google Sans', sans-serif;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 18px;
+    border: none;
+    color: #6750A4;
+    padding: 7px;
+    padding-inline: 20px;
+    font-weight: 450;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    scale: 1.1;
+    transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.2s ease,
+                transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+}
+
+/* Stan wciśnięty */
+.m3-ElevantedButtonWithAnimatedShapeSample:active {
+    background-color: #E9E5F8; /* jasny fioletowy */
+    border-radius: 10px;
+    transform: scale(0.98);
+}
+
+/* Efekt błysku */
+.m3-ElevantedButtonWithAnimatedShapeSample:active::after {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+            .m3-FilledTonalButtonSample {
+                gap: 10px;
+                background-color: #4a4458;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 18px;
+                border: none;
+                color: #e9def8;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+            }
+            .m3-FilledTonalButtonSample:active {
+                background-color: #5a5569;
+            }
+            .m3-FilledTonalButtonWithAnimatedShapeSample {
+                gap: 10px;
+                background-color: #4a4458;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                border-radius: 18px; 
+                border: none;
+                color: #e9def8;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                scale: 1.1;
+                transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                            background-color 0.2s ease, 
+                            transform 0.1s ease;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /* Stan wciśnięty */
+            .m3-FilledTonalButtonWithAnimatedShapeSample:active {
+                background-color: #5a5569;
+                border-radius: 10px; /* Nowy promień */
+                transform: scale(0.98); /* Opcjonalnie: lekki efekt wciśnięcia */
+            }
+
+            /* Pseudo-element ::after (opcjonalnie dla efektu błysku) */
+
+
+            .m3-FilledTonalButtonWithAnimatedShapeSample:active::after {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .m3-OutlinedButtonSample {
+                gap: 10px;
+                background-color: transparent;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 18px;
+                border: none;
+                color: #cac4d1;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #48444e;
+            }
+            .m3-OutlinedButtonSample:active {
+                background-color: #27232b;
+            }
+            .m3-OutlinedButtonWithAnimatedShapeSample {
+                gap: 10px;
+                background-color: transparent;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                border-radius: 18px; 
+                border: none;
+                color: #cac4d1;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                scale: 1.1;
+                transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                            background-color 0.2s ease, 
+                            transform 0.1s ease;
+                -webkit-tap-highlight-color: transparent;
+                border: 1px solid #48444e;
+            }
+
+            /* Stan wciśnięty */
+            .m3-OutlinedButtonWithAnimatedShapeSample:active {
+                background-color: #27232b;
+                border-radius: 10px; /* Nowy promień */
+                transform: scale(0.98); /* Opcjonalnie: lekki efekt wciśnięcia */
+            }
+
+            /* Pseudo-element ::after (opcjonalnie dla efektu błysku) */
+
+
+            .m3-OutlinedButtonWithAnimatedShapeSample:active::after {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .m3-SmallButtonSample {
+                gap: 10px;
+                background-color: #d1bcff;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 18px;
+                border: none;
+                color: #371e6f;
+                padding: 7px;
+                padding-inline: 11px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+            }
+            .m3-SmallButtonSample:active {
+                background-color: #c7abe4;
+            }
+            .m3-SquareButtonSample {
+                gap: 10px;
+                background-color: #d1bcff;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 10px;
+                border: none;
+                color: #371e6f;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+            }
+            .m3-SquareButtonSample:active {
+                background-color: #c7abe4;
+            }
+            .m3-TextButtonSample {
+                gap: 10px;
+                background-color: transparent;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                flex-direction: row;
+                border-radius: 18px;
+                border: none;
+                color: #d0bcff;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                scale: 1.1;
+                justify-content: center;
+                align-items: center;
+            }
+            .m3-TextButtonSample:active {
+                background-color: #27222f;
+            }
+            .m3-TextButtonWithAnimatedShapeSample {
+                gap: 10px;
+                background-color: transparent;
+                display: flex;
+                font-family: 'Google Sans', sans-serif;
+                font-size: 17px;
+                text-align: center;
+                border-radius: 18px; 
+                border: none;
+                color: #d0bcff;
+                padding: 7px;
+                padding-inline: 20px;
+                font-weight: 450;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                scale: 1.1;
+                transition: border-radius 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                            background-color 0.2s ease, 
+                            transform 0.1s ease;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /* Stan wciśnięty */
+            .m3-TextButtonWithAnimatedShapeSample:active {
+                background-color: #27222f;
+                border-radius: 10px; /* Nowy promień */
+                transform: scale(0.98); /* Opcjonalnie: lekki efekt wciśnięcia */
+            }
+
+            /* Pseudo-element ::after (opcjonalnie dla efektu błysku) */
+
+
+            .m3-TextButtonWithAnimatedShapeSample:active::after {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .m3-card {
+                padding: 20px;
+                border-radius: 12px;
+                margin-top:  20px;
+                text-align: center;
+                color: #262035;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                max-width: 600px;
+                position: relative;
+                padding-top: 40px;
+            }
+            .m3-card2 {
+                background-color: #e7e0ec;
+                padding: 5px;
+                margin: 20px;
+                margin-bottom: 0px;
+                border-radius: 16px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                font-family: 'Google Sans', sans-serif;
+                font-size: 18px;
+                color: #371e6f;
+                max-width: 600px;
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                display: block;
+            }
