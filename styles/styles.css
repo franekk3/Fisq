@@ -294,3 +294,21 @@ body.no-scroll {
 .rows-hr {
     margin: 20px 0; color: #CAC4D0;
 }
+.screenshoot-photo {
+    height: auto;
+    width: 90%;
+    max-width: 240px;
+    border-radius: 16px;
+
+}
+.arrow-screenstoots {
+    height: 40px;
+    width: 40px;
+
+}
+.arrow-screenstoots:hover {
+    scale: 1.05;
+    background-color: #CAC4D0;
+    border-radius: 16px;
+
+}
