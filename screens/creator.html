@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/style.css"/>
+  <title> Fisq!  - Flashcards</title>
+<style>
+    body {
+        justify-content: flex-start;
+    }
+    input:focus {
+        border: none;
+        outline: none;
+    }
+</style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row;  align-items: center; justify-content: space-between; width: 90%; text-align: center; ">
+        <img src="../icons/angle-small-left.png" class="cards-TopBar-Button" onclick="window.location.href = './cards.html';">
+        <p style="width: 100%; color: white; font-weight: bold; font-size: 22px; "> Create new </p>
+    </div>
+    <div style="display: flex; margin: 0px; padding: 0px; align-items: center; justify-content: center; flex-direction: column; position : fixed; bottom: 50%; transform: translateY(+50%); width:100%;">
+    <div class="flashcard-bigger-box">
+    <img class="flashcard-buttons" src="../icons/angle-small-left.png" onclick='changeIndex("-")'>
+    <div class="flashcard-container" id="flashcard" onclick=''>
+      <input placeholder="Flashcard content..." style="border: none; background-color: transparent; font-size: 20px; font-weight: bold; color: var(--color-primary);" id="flashcardContent" >
+    </div>
+    <img class="flashcard-buttons" src="../icons/angle-small-right.png" onclick='changeIndex("+")'>
+  </div>
+  <p style="color: var(--color-on-primary); font-weight: bold;" id="indexLabel"> 1 / 1 </p>
+    <p id="debug" style="display: none;"> </p>
+    <div>
+      <img src="../icons/plus.png" style="width: 25px; height: 25px; background-color: #3a3834; padding: 7px; border-radius: 16px;" onclick="createNew()">
+      <img src="../icons/trash-xmark.png" style="width: 25px; height: 25px; background-color: #3a3834; padding: 7px; border-radius: 16px;" onclick="deleteFlashcard()">
+      <img src="../icons/disk.png" style="width: 20px; height: 20px; background-color: #3a3834; padding: 9.5px; border-radius: 16px;" onclick="saveToStorage()">
+    </div>
+    </div>
+    <script>
+const indexLabel = document.getElementById('indexLabel');
+  const flashcardContent = document.getElementById('flashcardContent');
+  const flashcard = document.getElementById('flashcard');
+  const dbg = document.getElementById('debug');
+  let index = 1;
+  let setLen = 1;
+  let side1 = "fisq!";
+  let side2 = "2 side";
+  let side = 1;
+  let flashcardSet = [{side1: "side1", side2: "side2"}]
+  function loadSet() {
+    setLen = flashcardSet.length;
+  }
+  const newFlashcard = {side1: '', side2: ''};
+  loadSet();
+  function saveToStorage() {
+      localStorage.setItem('flashcardSet', JSON.stringify(flashcardSet));
+    }
+  function deleteFlashcard() {
+      if (setLen <= 1) {
+          alert("You can't delete all flashcards!");
+          return;
+      }
+      flashcardSet.splice(index - 1, 1);
+      loadSet(); 
+      if (index > setLen) {
+          index = setLen;
+      }
+      updateSide();
+      indexLabel.textContent = index + " / " + setLen;
+      dbg.textContent = JSON.stringify(flashcardSet, null, 2);
+  }
+  function createNew() {
+    flashcardSet.splice(index, 0, {...newFlashcard});
+    loadSet();
+    updateSide();
+    changeIndex("+")
+    indexLabel.textContent = index + " / " + setLen;
+  }
+  function rotate() {
+    if (flashcard.classList.contains('flashcard-container2')) {
+      flashcard.classList.remove('flashcard-container2');
+      side = 1;
+      updateSide()
+    } else {
+      flashcard.classList.add('flashcard-container2');
+      side = 2;
+      updateSide()
+
+    }
+      flashcard.classList.add('animation-rotate');
+      flashcardContent.classList.add('animation-rotate');
+
+      setTimeout(() => { flashcard.classList.remove('animation-rotate') }, 400);
+      setTimeout(() => { flashcardContent.classList.remove('animation-rotate') }, 400);
+  }
+  function updateSide() {
+    if (side === 1) {
+      flashcardContent.value = flashcardSet[index - 1].side1;
+        flashcardContent.style.color = "#302f2c";
+    } else if (side === 2) {
+      flashcardContent.value = flashcardSet[index - 1].side2;
+      flashcardContent.style.color = "#ebe3c5";
+    }
+  }
+  function changeIndex(d) {
+    if (d === '-') {
+      if (index > 1) {
+        flashcard.classList.add('animation-move-left');
+        setTimeout(() => { flashcard.classList.remove('animation-move-left') }, 400);
+        index -= 1;
+      } else {
+         console.log("first flashcard");
+         flashcard.classList.add('animation-shake');
+         setTimeout(() => { flashcard.classList.remove('animation-shake') }, 400);
+      }
+    } else if (d === '+') {
+      if (setLen > index) {
+        flashcard.classList.add('animation-move-right');
+        setTimeout(() => { flashcard.classList.remove('animation-move-right') }, 400);
+        index += 1;
+      } else {
+         console.log("last flashcard");
+         flashcard.classList.add('animation-shake');
+         setTimeout(() => { flashcard.classList.remove('animation-shake') }, 400);
+      }
+      
+    }
+    updateSide()
+    indexLabel.textContent = index + " / " + setLen;
+  }
+  changeIndex()
+  flashcard.addEventListener('click', function(event) {
+    // Jeśli kliknięty element to input LUB cokolwiek wewnątrz inputa/labela - przerwij
+    if (event.target.closest('input') || event.target.closest('label')) {
+        return;
+    }
+      rotate()
+});
+  flashcardContent.addEventListener("input", function(e) {
+    if (side === 1) {
+        flashcardSet[index - 1].side1 = e.target.value ;
+    } else if (side === 2) {
+     flashcardSet[index - 1].side2 = e.target.value ;   
+    }
+    dbg.textContent = JSON.stringify(flashcardSet, null, 2);
+});
+    </script>
+</body>
+</html>
