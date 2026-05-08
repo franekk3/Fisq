@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="manifest" href="manifest.json">
+  <title> Fisq! </title>
+  <link rel="icon" type="image/png" href="./icons/icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="./icons/icon.png">
+  <style>
+
+  </style>
+</head>
+<body>
+  <iframe src="./screens/main.html" style="border: none; width: 100%; height: 100%;" scrolling="no" id="homePage"></iframe>
+  <iframe src="./screens/cards.html" style="border: none; width: 100%; height: 100%;" class="hidden" id="cardsPage" scrolling="no"></iframe>
+  <iframe src="./screens/settings.html" style="border: none; width: 100%; height: 100%;" class="hidden" id="settingsPage" scrolling="no"></iframe>
+
+  <div class="navbar">
+    <div class="navbar-item navbar-item-selected" onclick="navbar_click('home')" id="homeNav">
+      <img class="navbar-img" src="icons/house-blank_filled.png" id="homeNavIcon"> 
+      <label class="navbar-item-label"> Home </label>
+    </div>
+    <div class="navbar-item" onclick="navbar_click('docs')" id="docsNav">
+      <img class="navbar-img" src="icons/cards-blank.png" id="docsNavIcon">
+      <label class="navbar-item-label"> Cards </label>
+    </div>
+    <div class="navbar-item" onclick="navbar_click('about')" id="aboutNav">
+      <img class="navbar-img" src="icons/settings.png" id="aboutNavIcon">
+      <label class="navbar-item-label"> Settings </label>
+    </div>
+  </div>
+
+   <script>
+  const homeNav = document.getElementById('homeNav');
+  const homeNavIcon = document.getElementById('homeNavIcon');
+  const docsNav = document.getElementById('docsNav');
+  const docsNavIcon = document.getElementById('docsNavIcon');
+  const aboutNav = document.getElementById('aboutNav');
+  const aboutNavIcon = document.getElementById('aboutNavIcon');
+
+  
+  function navbar_click(card, push = true) {
+    if (card === 'home') {
+        homeNav.classList.add('navbar-item-selected');
+        aboutNav.classList.remove('navbar-item-selected');
+        docsNav.classList.remove('navbar-item-selected');
+        docsNavIcon.src = "icons/cards-blank.png";
+        homeNavIcon.src = "icons/house-blank_filled.png";
+        aboutNavIcon.src = "icons/settings.png";
+        document.getElementById('homePage').classList.remove('hidden');
+        document.getElementById('cardsPage').classList.add('hidden');
+        document.getElementById('settingsPage').classList.add('hidden');
+
+      }  else if(card === 'docs') {
+        docsNav.classList.add('navbar-item-selected');
+        aboutNav.classList.remove('navbar-item-selected');
+        homeNav.classList.remove('navbar-item-selected');
+        docsNavIcon.src = "icons/cards-blank_filled.png";
+        homeNavIcon.src = "icons/house-blank.png";
+        aboutNavIcon.src = "icons/settings.png";
+        document.getElementById('homePage').classList.add('hidden');
+        document.getElementById('cardsPage').classList.remove('hidden');
+        document.getElementById('settingsPage').classList.add('hidden');
+      } else if(card === 'about') {
+        aboutNav.classList.add('navbar-item-selected');
+        homeNav.classList.remove('navbar-item-selected');
+        docsNav.classList.remove('navbar-item-selected');
+        docsNavIcon.src = "icons/cards-blank.png";
+        homeNavIcon.src = "icons/house-blank.png";
+        aboutNavIcon.src = "icons/settings_filled.png";  
+        document.getElementById('homePage').classList.add('hidden');
+        document.getElementById('cardsPage').classList.add('hidden');
+        document.getElementById('settingsPage').classList.remove('hidden');    
+     
+      }
+
+      if (push) {
+        history.pushState({card: card}, "", "");
+      }
+  }
+
+  // Initial state
+  history.replaceState({card: 'home'}, "", "");
+
+  window.onpopstate = function(event) {
+    if (event.state && event.state.card) {
+        navbar_click(event.state.card, false);
+    }
+  };
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/Fisq/sw.js')
+        .then(reg => console.log('Service Worker Registered!'))
+        .catch(err => console.log('Registration Failed:', err));
+    });
+  }
+  </script>
+
+
+
+</body>
+
+</html>
