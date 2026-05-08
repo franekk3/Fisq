@@ -37,13 +37,6 @@
   </div>
 
    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/Fisq/sw.js')
-        .then(reg => console.log('Service Worker Registered!'))
-        .catch(err => console.log('Registration Failed:', err));
-    });
-  }
   const homeNav = document.getElementById('homeNav');
   const homeNavIcon = document.getElementById('homeNavIcon');
   const docsNav = document.getElementById('docsNav');
@@ -54,7 +47,7 @@
   
   function navbar_click(card) {
     if (card === 'home') {
-        homeNav.classList.add('navba<link rel="manifest" href="manifest.json">r-item-selected');
+        homeNav.classList.add('navbar-item-selected');
         aboutNav.classList.remove('navbar-item-selected');
         docsNav.classList.remove('navbar-item-selected');
         docsNavIcon.src = "icons/cards-blank.png";
@@ -87,7 +80,14 @@
      
       }
   }
- 
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/Fisq/sw.js')
+        .then(reg => console.log('Service Worker Registered!'))
+        .catch(err => console.log('Registration Failed:', err));
+    });
+  }
   </script>
 
 
