@@ -1,5 +1,9 @@
 # Fisq <img src="https://franekk3.github.io/Fisq/icons/icon.png" height="50px">
 Fisq! - free, open-source, web based flashcards!
+#### App avible on:
+[Fisq!](https://franekk3.github.io/Fisq)
+#### Docs avible on:
+[Fisq Docs](https://franekk3.github.io/Fisq/docs)
 ### Futures:
 - Free to use
 - No trackers
