@@ -1,1 +1,79 @@
-<p> no docs for now </p>
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css"/>
+    <title> Fisq!  - Flashcards</title>
+    <style>
+        body {
+            justify-content: flex-start;
+
+        }
+    </style>
+    </head>
+    <body>
+    <div class="cards-TopBar">
+            <p style="color: white; font-size: 22px; font-weight: bold;"> Fisq! Docs </p>
+    </div>
+<div style="display: flex; flex-direction: row; padding: 0px; border-radius: 16px; gap: 8px; background-color: black; color: #bfbdb6; align-items: center; justify-content: center; height: 36px; max-width: 200px">
+    <p onclick="change()" class="option option-selected" id="option1"> FAQ </p>
+    <p onclick="change()" class="option " id="option2"> Other </p>
+  </div>
+  <div class="content-box" id="content-box1">
+    <p class="content-box-title" style="font-size: 26px; margin-left: 10px; font-weight: bolder;"> FAQ </p>
+    <details class="details-description">
+    <summary class="details-title"> Is Fisq! Open Source? </summary>
+        Yes, Fisq! is Open Source and it's whole Sorce Code is avible on it's <a style="color: white; font-weight: bold; text-decoration: none;" href="https://github.com/" target="_blank">Github repo</a>
+    </details>
+    <details class="details-description">
+    <summary class="details-title"> Is Fisq! free? </summary>
+        Yes, Fisq! is compleatly free to use without any ads!
+    </details>
+    <details class="details-description">
+    <summary class="details-title"> Does Fisq! store my data on external servers? </summary>
+        No, all your data is stored locally in your browser's data.  
+    </details>
+    <details class="details-description">
+    <summary class="details-title"> How can I use Fisq? </summary>
+        You can use Fisq! in your browser <a style="color: white; font-weight: bold; text-decoration: none;" href="https://franekk3.github.io/Fisq/" target="_blank">here </a> but you can also download offline app for Android <a style="color: white; font-weight: bold; text-decoration: none;" href="https://github.com/franekk3/Fisq/releases" target="_blank">here </a>.
+    </details>
+  </div>
+  <div class="content-box hidden" id="content-box2">
+    <p class="content-box-title"> Building from source: </p>
+    <p class="content-box-title" style="font-size: 18px; margin-left: 5px;" > 1. Web </p>
+    <p style="margin-left: 12px;;"> <b>a. </b> clone repo from <a style="color: white; font-weight: bold; text-decoration: none;" href="https://franekk3.github.io/Fisq/" target="_blank">here </a><br> <b>b. </b> open downloaded projects folder <br> <b>c. </b>run http server in main directory <br><br><b style="font-size: 15px;"> for example: <code> python3 -m http.server </code></b> <br> <i style="font-size: 14px;"> commend above requies python installed </i> </p>
+    <p class="content-box-title" style="font-size: 18px; margin-left: 5px;" > 2. Android </p>
+    <p style="font-size: 16px; margin-left: 10px; font-weight: bold"> Option A </p>
+    <p style="margin-left: 16px;;"> <b>a. </b> clone repo from <a style="color: white; font-weight: bold; text-decoration: none;" href="https://franekk3.github.io/Fisq/" target="_blank">here </a><br> <b>b. </b> go to <code> android-app </code> folder inside downlaoded project, using <code style="font-weight: bold;"> Android Studio</code><br> <b>c. </b>build using  <code style="font-weight: bold;"> Android Studio</code><br><br><i style="font-size: 14px;"> requies <code style="font-weight: bold;"> Android Studio</code> installed </i> </p>
+    <p style="font-size: 16px; margin-left: 10px; font-weight: bold"> Option B </p>
+    <p style="margin-left: 16px;;"> <b>a. </b> clone repo from <a style="color: white; font-weight: bold; text-decoration: none;" href="https://franekk3.github.io/Fisq/" target="_blank">here </a><br> <b>b. </b> go to <code> android-app </code> folder inside downlaoded project<br> <b>c.</b> build using <code> ./gradlew build  </code> #linux/mac or <code> ./gradlew.bat build </code>  #windows in terminal/cmd</p>
+  </div>
+    <script>
+  const option1 = document.getElementById('option1');
+  const option2 = document.getElementById('option2');
+  const contentBox1 = document.getElementById('content-box1');
+  const contentBox2 = document.getElementById('content-box2');
+  function change() {
+    if (option2.classList.contains('option-selected') ) {
+      option1.classList.add('option-selected');
+      option2.classList.remove('option-selected');
+      
+      contentBox2.classList.add('hidden');
+      contentBox1.classList.remove('hidden');
+
+    } else {
+      option1.classList.remove('option-selected');
+      option2.classList.add('option-selected');
+
+      
+      contentBox1.classList.add('hidden');
+      contentBox2.classList.remove('hidden');
+
+    }
+    
+  }
+    </script>
+    </body>
+</html>
