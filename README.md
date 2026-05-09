@@ -20,6 +20,6 @@ Fisq! - free, open-source, web based flashcards!
 - [Credits :heart:](https://franekk3.github.io/Fisq/screens/legal/credits.html) 
 - [Privacy Policy](https://franekk3.github.io/Fisq/screens/legal/policy.html) 
 - [Terms of Use](https://franekk3.github.io/Fisq/screens/legal/terms.html)
-- Project is on [GPLv3](github.com/franekk3/Fisq/?tab=GPL-3.0-1-ov-file) License
+- Project is on [GPLv3](github.com/franekk3/Fisq/blob/main/LICENSE) License
 
 *by using `Fisq!` you agree to Privacy Policy & Terms of Use*
