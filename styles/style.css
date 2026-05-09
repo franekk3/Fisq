@@ -358,3 +358,13 @@
   height: 22px;
   width: 22px;
 }
+.details-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+.details-descriptoin {
+  color: #aaa;
+  font-size: 15px;
+}
