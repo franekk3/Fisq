@@ -45,7 +45,7 @@
   const aboutNavIcon = document.getElementById('aboutNavIcon');
 
   
-  function navbar_click(card, push = true) {
+  function navbar_click(card) {
     if (card === 'home') {
         homeNav.classList.add('navbar-item-selected');
         aboutNav.classList.remove('navbar-item-selected');
@@ -79,20 +79,7 @@
         document.getElementById('settingsPage').classList.remove('hidden');    
      
       }
-
-      if (push) {
-        history.pushState({card: card}, "", "");
-      }
   }
-
-  // Initial state
-  history.replaceState({card: 'home'}, "", "");
-
-  window.onpopstate = function(event) {
-    if (event.state && event.state.card) {
-        navbar_click(event.state.card, false);
-    }
-  };
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
